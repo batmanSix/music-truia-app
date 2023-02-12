@@ -1,11 +1,13 @@
 <script setup lang="ts">
+import axios from "axios";
 // This starter template is using Vue 3 <script setup> SFCs
 // Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
 import Greet from "./components/Greet.vue";
-import GlobalHeader from "./components/common/GlobalHeader/index.vue";
+import GlobalHeader from "./layouts/common/GlobalHeader/index.vue";
 import { useUsersStore } from "./store/user";
 const store = useUsersStore();
 console.log(store, "store这里");
+console.log(axios, "axios 这里");
 </script>
 
 <template>
