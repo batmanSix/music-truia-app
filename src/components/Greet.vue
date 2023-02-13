@@ -3,6 +3,8 @@ import { ref } from "vue";
 import { invoke } from "@tauri-apps/api/tauri";
 import { NButton } from "naive-ui";
 import { ask, confirm, message, open } from "@tauri-apps/api/dialog";
+
+import { readText } from "@tauri-apps/api/clipboard";
 const greetMsg = ref("");
 const name = ref("");
 
@@ -30,6 +32,10 @@ const handleClick = async () => {
     // user selected a single file
   }
   // console.log(confirmed2);
+
+  const clipboardText = await readText();
+
+  console.log(clipboardText, "clipboardText");
 };
 </script>
 
